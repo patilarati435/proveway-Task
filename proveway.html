@@ -28,6 +28,7 @@
     />
   </head>
   <body>
+    
     <div class="container">
       
       <div class="d-flex main mt-2">
@@ -54,9 +55,9 @@
       </div>
       
       <!-- section 1 -->
-      <section class="border border-1 section1">
+      <section class="border border-1 section1" id="main1">
         <div class="row mx-2">
-          <div class="col-1 mt-4"><input type="radio" /></div>
+          <div class="col-1 mt-4"><input type="radio"  class="input" onchange="selectSection(1)" id="radio1" name="inp" /></div>
           <div class="col-7 mt-2">
             <span class="v-1">1 Pair</span>
             <p class="fw-semibold">DDK 195.00</p>
@@ -66,9 +67,9 @@
       </section>
       <!-- section 2 -->
       <br />
-      <section class="border border-1 sec2 pt-2">
+      <section class="border border-1 sec2 pt-2" id="main2">
         <div class="row mx-1">
-          <div class="col-1"><input type="radio" class="input" checked /></div>
+          <div class="col-1"><input type="radio" class="input" onchange="selectSection(2)" checked="2" id="radio3" name="inp" /></div>
           <div class="col-4 sec21">
             2 Pair
             <p class="sec22">DDK 345.00</p>
@@ -98,9 +99,10 @@
                   <div class="btn-group" role="group">
                     <button
                       type="button"
-                      class="btn dropdown-toggle"
+                      class="btn dropdown-toggle border-0"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
+
                     ></button>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">large</a></li>
@@ -123,7 +125,7 @@
                   <div class="btn-group" role="group">
                     <button
                       type="button"
-                      class="btn dropdown-toggle"
+                      class="btn dropdown-toggle border-0"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     ></button>
@@ -150,7 +152,7 @@
                   <div class="btn-group" role="group">
                     <button
                       type="button"
-                      class="btn dropdown-toggle"
+                      class="btn dropdown-toggle border-0"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     ></button>
@@ -175,7 +177,7 @@
                   <div class="btn-group" role="group">
                     <button
                       type="button"
-                      class="btn dropdown-toggle"
+                      class="btn dropdown-toggle border-0"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     ></button>
@@ -193,9 +195,9 @@
       </section>
       <br />
       <!-- section 3 -->
-      <section class="border border-1 section1">
+      <section class="border border-1 section1" id="main3" >
         <div class="row mx-2">
-          <div class="col-1 mt-4"><input type="radio" /></div>
+          <div class="col-1 mt-4"><input type="radio"  class="input" onchange="selectSection(3)" id="radio2" name="inp"/></div>
           <div class="col-7 mt-2">
             <span class="v-1">3 Pair</span>
             <p class="fw-semibold">DDK 528.00</p>
@@ -230,5 +232,31 @@
             fill="black"/></svg><span class="end">Powered by Pumper</span>
       </div>
     </div>
+
+    
+    <script>
+    function selectSection(selected) {
+      
+        const section1 = document.getElementById("main1");
+        const section2 = document.getElementById("main2");
+        const section3 = document.getElementById("main3");
+
+        if (selected === 1) {
+          section1.style.backgroundColor = "#F4FBF9"; // Reset background color
+          section2.style.backgroundColor ="";  
+          section3.style.backgroundColor = "";  
+          
+        } else if (selected === 2) {
+          section1.style.backgroundColor = ""; // Reset background color
+          section2.style.backgroundColor = "#F4FBF9";  
+          section3.style.backgroundColor = "";   
+        } else if (selected === 3) {
+          section1.style.backgroundColor = ""; // Reset background color
+          section2.style.backgroundColor = "";  
+          section3.style.backgroundColor = "#F4FBF9"; 
+        }
+    }
+
+    </script>
   </body>
 </html>
